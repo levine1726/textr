@@ -21,8 +21,9 @@ defmodule Textr.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:aws_lambda_elixir_runtime, "~> 0.1.0"},
-      {:distillery, "~> 2.0"}
+      {:aws_lambda_elixir_runtime,
+       github: "levine1726/aws-lambda-elixir-runtime",
+       compile: "cd elixir_runtime; mix do deps.get, compile, compile.app"}
     ]
   end
 end
