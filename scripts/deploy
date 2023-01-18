@@ -1,0 +1,12 @@
+# source aws environment variables
+. ./aws_variables
+
+mix do release, bootstrap, zip
+
+aws lambda update-function-code \
+    --profile $AWS_PROFILE \
+    --region $AWS_REGION \
+    --function-name Textr \
+    --zip-file fileb://./lambda.zip \
+    
+rm ./lambda.zip
