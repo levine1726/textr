@@ -30,3 +30,5 @@ aws_variables
 
 #ignore leftover lamdba.zip files
 lambda.zip
+
+test_file.txt

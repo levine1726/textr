@@ -1,0 +1,11 @@
+# source aws environment variables
+. ./aws_variables
+cli_binary_format=raw-in-base64-out
+
+aws lambda invoke \
+    --profile $AWS_PROFILE \
+    --function-name Textr \
+    --region $AWS_REGION \
+    --log-type Tail \
+    --payload '{"msg": "test time!"}' \
+    test_file.txt
