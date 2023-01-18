@@ -1,18 +1,12 @@
 defmodule Textr do
-  @moduledoc """
-  Documentation for `Textr`.
-  """
+  def main(request, context) when is_map(request) and is_map(context) do
+    """
+    Hello World!
+    Request: #{Kernel.inspect(request)}
+    Context: #{Kernel.inspect(context)}
+    """
+    |> IO.puts()
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Textr.hello()
-      :world
-
-  """
-  def hello do
-    :world
+    :ok
   end
 end
