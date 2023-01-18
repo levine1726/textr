@@ -24,3 +24,9 @@ textr-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+#ignore bash shell variable
+aws_variables
+
+#ignore leftover lamdba.zip files
+lambda.zip
