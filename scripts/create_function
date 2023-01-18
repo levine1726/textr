@@ -1,0 +1,15 @@
+# source aws environment variables
+. ./aws_variables
+
+mix do release, bootstrap, zip
+
+aws lambda create-function \
+    --profile $AWS_PROFILE \
+    --region $AWS_REGION \
+    --function-name Textr \
+    --handler Elixir.Textr:main \
+    --role $AWS_ROLE \
+    --runtime provided \
+    --zip-file fileb://./lambda.zip \
+    
+rm ./lambda.zip
